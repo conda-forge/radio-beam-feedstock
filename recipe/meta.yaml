@@ -1,7 +1,7 @@
 {% set name = "radio_beam" %}
-{% set version = "0.2" %}
+{% set version = "0.3.2" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "3b3b3cfcc17d61df469c9e45d7f7fc993b902f3f2c076279071fd984a6e5763d" %}
+{% set hash_value = "c2b5beabc12a52ba8911d3dd054e455bba3902db19bb07cc5243803d63c4363c" %}
 
 package:
   name: radio-beam
