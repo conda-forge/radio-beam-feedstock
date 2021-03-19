@@ -1,27 +1,25 @@
 {% set name = "radio_beam" %}
-{% set version = "0.3.2" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "c2b5beabc12a52ba8911d3dd054e455bba3902db19bb07cc5243803d63c4363c" %}
+{% set version = "0.3.3" %}
 
 package:
   name: radio-beam
-  version: '{{ version }}'
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
+  sha256: e34902d91713ccab9f450b9d3e82317e292cf46a30bd42f9ad3c9a0519fcddcd
   patches:
     - offline.patch
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
 
-  build:
+  host:
     - python
     - pip
     - setuptools
