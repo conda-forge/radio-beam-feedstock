@@ -9,8 +9,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
   sha256: e34902d91713ccab9f450b9d3e82317e292cf46a30bd42f9ad3c9a0519fcddcd
-  patches:
-    - offline.patch
 
 build:
   number: 0
@@ -20,14 +18,16 @@ build:
 requirements:
 
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools
+    - setuptools_scm
 
   run:
-    - python
+    - python >=3.6
     - astropy
     - numpy >=1.9.0
+    - six
 
 test:
   imports:
