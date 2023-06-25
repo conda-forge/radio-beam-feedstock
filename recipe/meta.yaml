@@ -27,6 +27,7 @@ requirements:
     - astropy
     - numpy >=1.9.0
     - scipy
+    - setuptools
 
 test:
   imports:
