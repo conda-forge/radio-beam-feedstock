@@ -1,5 +1,5 @@
 {% set name = "radio_beam" %}
-{% set version = "0.3.8" %}
+{% set version = "0.3.9" %}
 
 package:
   name: radio-beam
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 084feb71828edc3bb3e73c26278804baa3a83b7532eec8f03a2f7a1cfd18e770
+  sha256: 9b5fea7bcc9b26543213784633b32e81630c9c0855077b7abf4b46cf8d84e644
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
